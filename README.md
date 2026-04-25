@@ -1,7 +1,19 @@
-# odoo-k3s-tfg-asir
+## Estructura del proyecto
 
-Despliegue de Odoo ERP sobre clúster K3s ARM64 con observabilidad y seguridad avanzada - TFG ASIR
+- infraestructura/: configuración de red y máquinas virtuales
+- kubernetes/: manifiestos de despliegue de servicios
+  - odoo/
+  - postgresql/
+  - traefik/
+  - longhorn/
+  - monitorizacion/
+- docs/: documentación, capturas y memoria
 
-## Estado del proyecto
+## Tecnologías utilizadas
 
-Repositorio inicial preparado y conectado con GitHub.
+- K3s (Kubernetes)
+- Odoo
+- PostgreSQL
+- Longhorn
+- Traefik
+- Grafana
