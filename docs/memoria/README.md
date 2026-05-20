@@ -1,3 +1,5 @@
 # Memoria
 
-Aquí se irá guardando el material y borradores para la memoria del TFG.
+La memoria completa del proyecto se mantiene como documento aparte.
+
+Esta carpeta queda reservada para material auxiliar relacionado con la memoria, si en algun momento hace falta incluirlo dentro del repositorio.
