@@ -1,0 +1,54 @@
+NAMESPACE         NAME                                                         READY   STATUS    RESTARTS       AGE   IP               NODE          NOMINATED NODE   READINESS GATES
+kube-system       pod/coredns-76c974cb66-p549g                                 1/1     Running   0              23h   10.42.2.169      k3s-worker2   <none>           <none>
+kube-system       pod/local-path-provisioner-8686667995-hrw5c                  1/1     Running   0              23h   10.42.2.168      k3s-worker2   <none>           <none>
+kube-system       pod/metrics-server-c8774f4f4-t52jg                           1/1     Running   0              23h   10.42.2.170      k3s-worker2   <none>           <none>
+kube-system       pod/svclb-traefik-f11b9f93-4grsn                             2/2     Running   14 (23h ago)   33d   10.42.1.151      k3s-worker1   <none>           <none>
+kube-system       pod/svclb-traefik-f11b9f93-dvq29                             2/2     Running   18 (23h ago)   33d   10.42.2.161      k3s-worker2   <none>           <none>
+kube-system       pod/svclb-traefik-f11b9f93-j84hv                             2/2     Running   12 (21h ago)   33d   10.42.0.108      k3s-master    <none>           <none>
+kube-system       pod/traefik-844fc4f4d7-pl2w2                                 1/1     Running   0              23h   10.42.2.167      k3s-worker2   <none>           <none>
+longhorn-system   pod/csi-attacher-64575c8dd7-dqsgt                            1/1     Running   8 (23h ago)    21d   10.42.1.165      k3s-worker1   <none>           <none>
+longhorn-system   pod/csi-attacher-64575c8dd7-n6v9f                            1/1     Running   18 (23h ago)   21d   10.42.1.168      k3s-worker1   <none>           <none>
+longhorn-system   pod/csi-attacher-64575c8dd7-tfjzk                            1/1     Running   7 (23h ago)    21d   10.42.1.154      k3s-worker1   <none>           <none>
+longhorn-system   pod/csi-provisioner-7c569c97b5-fccm9                         1/1     Running   10 (23h ago)   21d   10.42.1.155      k3s-worker1   <none>           <none>
+longhorn-system   pod/csi-provisioner-7c569c97b5-mnppk                         1/1     Running   10 (23h ago)   21d   10.42.1.163      k3s-worker1   <none>           <none>
+longhorn-system   pod/csi-provisioner-7c569c97b5-t5m6v                         1/1     Running   13 (23h ago)   21d   10.42.1.170      k3s-worker1   <none>           <none>
+longhorn-system   pod/csi-resizer-5f7fb8474b-8cnbw                             1/1     Running   15 (23h ago)   21d   10.42.1.158      k3s-worker1   <none>           <none>
+longhorn-system   pod/csi-resizer-5f7fb8474b-sdhdm                             1/1     Running   12 (23h ago)   21d   10.42.1.156      k3s-worker1   <none>           <none>
+longhorn-system   pod/csi-resizer-5f7fb8474b-snpzt                             1/1     Running   6 (23h ago)    21d   10.42.1.152      k3s-worker1   <none>           <none>
+longhorn-system   pod/csi-snapshotter-79f85b699b-8lvsc                         1/1     Running   11 (23h ago)   21d   10.42.1.166      k3s-worker1   <none>           <none>
+longhorn-system   pod/csi-snapshotter-79f85b699b-f5xv5                         1/1     Running   8 (23h ago)    21d   10.42.1.161      k3s-worker1   <none>           <none>
+longhorn-system   pod/csi-snapshotter-79f85b699b-xd2wp                         1/1     Running   14 (23h ago)   21d   10.42.1.159      k3s-worker1   <none>           <none>
+longhorn-system   pod/engine-image-ei-b4bcf0a5-5mwj5                           1/1     Running   6 (21h ago)    33d   10.42.0.102      k3s-master    <none>           <none>
+longhorn-system   pod/engine-image-ei-b4bcf0a5-dlfdw                           1/1     Running   7 (23h ago)    33d   10.42.1.160      k3s-worker1   <none>           <none>
+longhorn-system   pod/engine-image-ei-b4bcf0a5-hv6dc                           1/1     Running   9 (23h ago)    33d   10.42.2.165      k3s-worker2   <none>           <none>
+longhorn-system   pod/instance-manager-36b85d19f403b74daba450e7f39918ef        1/1     Running   0              23h   10.42.2.173      k3s-worker2   <none>           <none>
+longhorn-system   pod/instance-manager-56f31191993574ed1dae9fb5200f3fe3        1/1     Running   0              23h   10.42.1.172      k3s-worker1   <none>           <none>
+longhorn-system   pod/instance-manager-a49a2a55f51c6bade669df59818f37b2        1/1     Running   0              23h   10.42.0.109      k3s-master    <none>           <none>
+longhorn-system   pod/longhorn-csi-plugin-dtzsv                                3/3     Running   37 (21h ago)   29d   10.42.0.104      k3s-master    <none>           <none>
+longhorn-system   pod/longhorn-csi-plugin-dx9zg                                3/3     Running   33 (23h ago)   29d   10.42.1.164      k3s-worker1   <none>           <none>
+longhorn-system   pod/longhorn-csi-plugin-h9bd9                                3/3     Running   47 (23h ago)   29d   10.42.2.166      k3s-worker2   <none>           <none>
+longhorn-system   pod/longhorn-driver-deployer-6bf4b95458-wkzfd                1/1     Running   1 (23h ago)    21d   10.42.1.171      k3s-worker1   <none>           <none>
+longhorn-system   pod/longhorn-manager-5w9q7                                   2/2     Running   70 (23h ago)   33d   10.42.1.162      k3s-worker1   <none>           <none>
+longhorn-system   pod/longhorn-manager-6twlb                                   2/2     Running   12 (21h ago)   33d   10.42.0.105      k3s-master    <none>           <none>
+longhorn-system   pod/longhorn-manager-bbxsg                                   2/2     Running   26 (23h ago)   33d   10.42.2.164      k3s-worker2   <none>           <none>
+longhorn-system   pod/longhorn-ui-647c97b8bb-6x7x5                             1/1     Running   6 (23h ago)    21d   10.42.1.153      k3s-worker1   <none>           <none>
+longhorn-system   pod/longhorn-ui-647c97b8bb-krrcr                             1/1     Running   6 (23h ago)    21d   10.42.1.167      k3s-worker1   <none>           <none>
+monitoring        pod/alertmanager-monitoring-kube-prometheus-alertmanager-0   2/2     Running   2 (23h ago)    20d   10.42.2.163      k3s-worker2   <none>           <none>
+monitoring        pod/monitoring-grafana-757dc74bb9-ffdsk                      3/3     Running   0              23h   10.42.2.174      k3s-worker2   <none>           <none>
+monitoring        pod/monitoring-kube-prometheus-operator-7447cc9b9c-c8hr5     1/1     Running   1 (23h ago)    21d   10.42.1.157      k3s-worker1   <none>           <none>
+monitoring        pod/monitoring-kube-state-metrics-5b8ff7679f-lch5h           1/1     Running   39 (23h ago)   21d   10.42.1.169      k3s-worker1   <none>           <none>
+monitoring        pod/monitoring-prometheus-node-exporter-fjsx7                1/1     Running   32 (21h ago)   26d   172.16.214.141   k3s-master    <none>           <none>
+monitoring        pod/monitoring-prometheus-node-exporter-qxsl4                1/1     Running   36 (23h ago)   26d   172.16.214.143   k3s-worker2   <none>           <none>
+monitoring        pod/monitoring-prometheus-node-exporter-zcvfh                1/1     Running   31 (23h ago)   26d   172.16.214.142   k3s-worker1   <none>           <none>
+monitoring        pod/prometheus-monitoring-kube-prometheus-prometheus-0       2/2     Running   2 (23h ago)    20d   10.42.2.162      k3s-worker2   <none>           <none>
+odoo              pod/odoo-69678698d-fl8np                                     1/1     Running   1 (23h ago)    23h   10.42.1.173      k3s-worker1   <none>           <none>
+postgresql        pod/postgresql-75468cbb6f-8hqqj                              1/1     Running   0              23h   10.42.2.175      k3s-worker2   <none>           <none>
+
+NAMESPACE    NAME                                       STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE   VOLUMEMODE
+monitoring   persistentvolumeclaim/monitoring-grafana   Bound    pvc-67d84b45-c36b-453d-b0f8-72e58580ef54   5Gi        RWO            longhorn       <unset>                 12d   Filesystem
+odoo         persistentvolumeclaim/odoo-data-pvc        Bound    pvc-28aff229-09a2-4fcc-8f28-ff7b0a7500a7   5Gi        RWO            longhorn       <unset>                 32d   Filesystem
+postgresql   persistentvolumeclaim/postgresql-pvc       Bound    pvc-907c3b7f-fedb-4975-bf24-2abff9c8ca40   5Gi        RWO            longhorn       <unset>                 33d   Filesystem
+
+NAMESPACE    NAME                                        CLASS     HOSTS                   ADDRESS                                        PORTS     AGE
+monitoring   ingress.networking.k8s.io/grafana-ingress   traefik   garciaa.grafana.local   172.16.214.141,172.16.214.142,172.16.214.143   80, 443   26d
+odoo         ingress.networking.k8s.io/odoo-ingress      traefik   garciaa.odoo.local      172.16.214.141,172.16.214.142,172.16.214.143   80, 443   32d

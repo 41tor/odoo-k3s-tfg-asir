@@ -1,0 +1,152 @@
+apiVersion: v1
+items:
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    annotations:
+      deployment.kubernetes.io/revision: '5'
+    name: odoo
+    namespace: odoo
+  spec:
+    progressDeadlineSeconds: 600
+    replicas: 1
+    revisionHistoryLimit: 10
+    selector:
+      matchLabels:
+        app: odoo
+    strategy:
+      rollingUpdate:
+        maxSurge: 25%
+        maxUnavailable: 25%
+      type: RollingUpdate
+    template:
+      metadata:
+        annotations:
+          kubectl.kubernetes.io/restartedAt: '2026-04-18T10:25:24Z'
+        labels:
+          app: odoo
+      spec:
+        containers:
+        - env:
+          - name: HOST
+            value: postgresql.postgresql.svc.cluster.local
+          - name: PORT
+            value: '5432'
+          - name: USER
+            value: odoo
+          - name: PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: db_password
+                name: odoo-db-secret
+          image: odoo:18
+          imagePullPolicy: IfNotPresent
+          name: odoo
+          ports:
+          - containerPort: 8069
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: "/dev/termination-log"
+          terminationMessagePolicy: File
+          volumeMounts:
+          - mountPath: "/var/lib/odoo"
+            name: odoo-data
+        dnsPolicy: ClusterFirst
+        initContainers:
+        - command:
+          - sh
+          - "-c"
+          - |
+            mkdir -p /var/lib/odoo/sessions
+            chown -R 100:101 /var/lib/odoo
+            chmod -R 755 /var/lib/odoo
+          image: busybox:1.36
+          imagePullPolicy: IfNotPresent
+          name: init-odoo-permissions
+          resources: {}
+          securityContext:
+            runAsUser: 0
+          terminationMessagePath: "/dev/termination-log"
+          terminationMessagePolicy: File
+          volumeMounts:
+          - mountPath: "/var/lib/odoo"
+            name: odoo-data
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext:
+          fsGroup: 101
+        terminationGracePeriodSeconds: 30
+        volumes:
+        - name: odoo-data
+          persistentVolumeClaim:
+            claimName: odoo-data-pvc
+- apiVersion: v1
+  kind: Service
+  metadata:
+    name: odoo
+    namespace: odoo
+  spec:
+    clusterIP: 10.43.201.211
+    clusterIPs:
+    - 10.43.201.211
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - port: 8069
+      protocol: TCP
+      targetPort: 8069
+    selector:
+      app: odoo
+    sessionAffinity: None
+    type: ClusterIP
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    annotations:
+      pv.kubernetes.io/bind-completed: 'yes'
+      pv.kubernetes.io/bound-by-controller: 'yes'
+      volume.beta.kubernetes.io/storage-provisioner: driver.longhorn.io
+      volume.kubernetes.io/storage-provisioner: driver.longhorn.io
+    finalizers:
+    - kubernetes.io/pvc-protection
+    name: odoo-data-pvc
+    namespace: odoo
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 5Gi
+    storageClassName: longhorn
+    volumeMode: Filesystem
+    volumeName: pvc-28aff229-09a2-4fcc-8f28-ff7b0a7500a7
+- apiVersion: networking.k8s.io/v1
+  kind: Ingress
+  metadata:
+    annotations:
+      traefik.ingress.kubernetes.io/redirect-entry-point: websecure
+      traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
+      traefik.ingress.kubernetes.io/router.tls: 'true'
+    name: odoo-ingress
+    namespace: odoo
+  spec:
+    ingressClassName: traefik
+    rules:
+    - host: garciaa.odoo.local
+      http:
+        paths:
+        - backend:
+            service:
+              name: odoo
+              port:
+                number: 8069
+          path: "/"
+          pathType: Prefix
+    tls:
+    - hosts:
+      - garciaa.odoo.local
+      secretName: odoo-tls
+kind: List
+metadata: {}

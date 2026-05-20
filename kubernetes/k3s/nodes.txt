@@ -1,0 +1,4 @@
+NAME          STATUS   ROLES           AGE   VERSION        INTERNAL-IP      EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION      CONTAINER-RUNTIME
+k3s-master    Ready    control-plane   33d   v1.34.6+k3s1   172.16.214.141   <none>        Ubuntu 24.04.4 LTS   6.8.0-111-generic   containerd://2.2.2-bd1.34
+k3s-worker1   Ready    <none>          33d   v1.34.6+k3s1   172.16.214.142   <none>        Ubuntu 24.04.4 LTS   6.8.0-111-generic   containerd://2.2.2-bd1.34
+k3s-worker2   Ready    <none>          33d   v1.34.6+k3s1   172.16.214.143   <none>        Ubuntu 24.04.4 LTS   6.8.0-111-generic   containerd://2.2.2-bd1.34
